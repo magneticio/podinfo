@@ -23,6 +23,7 @@ spec:
     metadata:
       labels:
         app: {{ template "podinfo.fullname" . }}
+        version: {{ .Values.image.tag }}
       annotations:
         prometheus.io/scrape: "true"
         prometheus.io/port: "{{ .Values.service.httpPort }}"
